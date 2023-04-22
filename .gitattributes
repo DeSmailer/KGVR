@@ -1,4 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+git lfs track "*.psd"
+git lfs track "build_building_01_a.tif"
+git lfs track "build_building_02_a.tif"
+git lfs track "wood_tiled_01_n.tif"
 wood_tiled_01_n.tif filter=lfs diff=lfs merge=lfs -text
 *.tif filter=lfs diff=lfs merge=lfs -text
