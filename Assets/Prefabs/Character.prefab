@@ -305,6 +305,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 5605515304314721529, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: RopeNearLocalPosition.x
+      value: 0.176
+      objectReference: {fileID: 0}
     - target: {fileID: 5605515304315113077, guid: d53f81fefd5637340848e5f65ebfd953,
         type: 3}
       propertyPath: m_RootOrder
