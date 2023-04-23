@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6768953765940911545}
   m_Layer: 6
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,6 +304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304314721528, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5605515304314721529, guid: d53f81fefd5637340848e5f65ebfd953,
         type: 3}
