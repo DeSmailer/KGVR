@@ -4,10 +4,10 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     [SerializeField] private int _maxAmmo;
-    [SerializeField] private int _ammo;
+    private int _ammo;
     [SerializeField] private float _firingRange;
     [SerializeField] private float _damage;
-    [SerializeField] private int _money;
+    private int _money;
 
     public static Stats Instance;
 
@@ -73,5 +73,10 @@ public class Stats : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+    }
+
+    private void Start()
+    {
+        Ammo = MaxAmmo;
     }
 }

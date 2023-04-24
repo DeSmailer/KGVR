@@ -2,6 +2,7 @@
 * text=auto
 git lfs track "*.psd"
 git lfs track "*.tif"
+git lfs track "*.fbx"
 git lfs track "build_building_01_a.tif"
 git lfs track "build_building_02_a.tif"
 git lfs track "wood_tiled_01_n.tif"
