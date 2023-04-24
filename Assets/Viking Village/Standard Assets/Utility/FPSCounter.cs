@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +14,13 @@ namespace UnityStandardAssets.Utility
         const string display = "{0} FPS";
         private Text m_GuiText;
 
+
         private void Start()
         {
             m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
             m_GuiText = GetComponent<Text>();
         }
+
 
         private void Update()
         {

@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemieHP : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float _maxHP;
+    [SerializeField] private float _hp;
+
+    private void Start()
     {
-        
+        _hp = _maxHP;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        
+        _hp -= damage;
+
+        if (_hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log($"ÀÌÀ ÄÀÉ {gameObject.name}");
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6768953765940911544}
   - component: {fileID: 6768953765940911545}
   - component: {fileID: 2783994334847455936}
+  - component: {fileID: 2065000828592405682}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -142,10 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAmmo: 14
-  _ammo: 0
   _firingRange: 20
   _damage: 2
-  _money: 0
+--- !u!114 &2065000828592405682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768953765940911538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b8bf76e3fb3484ca48634936d71744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6768953766553178691
 GameObject:
   m_ObjectHideFlags: 0

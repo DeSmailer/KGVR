@@ -39,6 +39,12 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        EnemieHP enemieHP = other.gameObject.GetComponent<EnemieHP>();
+        if (enemieHP != null)
+        {
+            enemieHP.TakeDamage(Stats.Instance.Damage);
+        }
+
         if (other.gameObject.tag != "Player")
         {
             GetStuck();

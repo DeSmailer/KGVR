@@ -20,6 +20,9 @@ public class AmmoUI : MonoBehaviour
 
     private void Display()
     {
+        Debug.Log(Stats.Instance);
+        Debug.Log(Stats.Instance.Ammo);
+        Debug.Log(Stats.Instance.Ammo.ToString());
         _guiText.text = Stats.Instance.Ammo.ToString() + "/" + Stats.Instance.MaxAmmo.ToString();
     }
 
