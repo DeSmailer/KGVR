@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AmmoUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private TMP_Text _guiText;
+
+    private void Awake()
     {
-        
+        _guiText = GetComponent<TMP_Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Stats.Instance.OnMaxAmmoChange += Display;
+        Stats.Instance.OnAmmoChange += Display;
+
+        Display();
+    }
+
+    private void Display()
+    {
+        _guiText.text = Stats.Instance.Ammo.ToString() + "/" + Stats.Instance.MaxAmmo.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        Stats.Instance.OnMaxAmmoChange -= Display;
+        Stats.Instance.OnAmmoChange -= Display;
     }
 }
