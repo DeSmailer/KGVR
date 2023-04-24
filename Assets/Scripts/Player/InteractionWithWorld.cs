@@ -20,14 +20,21 @@ public class InteractionWithWorld : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<IUsable>() == usable)
+        if (usable != null)
         {
-            usable = null;
+            if (other.gameObject.GetComponent<IUsable>() == usable)
+            {
+                usable = null;
+            }
         }
-        if (other.gameObject.GetComponent<IInformant>() == informant)
+
+        if (informant != null)
         {
-            informant.HideInfo();
-            informant = null;
+            if (other.gameObject.GetComponent<IInformant>() == informant)
+            {
+                informant.HideInfo();
+                informant = null;
+            }
         }
     }
 
@@ -39,6 +46,7 @@ public class InteractionWithWorld : MonoBehaviour
             {
                 usable.Use();
             }
+
         }
     }
 }
