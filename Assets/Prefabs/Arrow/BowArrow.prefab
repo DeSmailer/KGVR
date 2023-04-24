@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7947395801673345582}
   m_Layer: 0
   m_Name: BowArrow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7947395801673345570}
   trailRenderer: {fileID: 7947395800576796441}
+  _hitAudioSource: {fileID: 3882518013539772361, guid: f86fc764dc450b242baa107d8b794a26,
+    type: 3}
 --- !u!114 &7947395801673345582
 MonoBehaviour:
   m_ObjectHideFlags: 0

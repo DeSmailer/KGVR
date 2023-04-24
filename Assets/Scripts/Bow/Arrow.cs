@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private TrailRenderer trailRenderer;
 
-    public Rigidbody rb;
-    public TrailRenderer trailRenderer;
+    [SerializeField] private AudioSource _hitAudioSource;
 
     public void SetToRope(Transform ropeTransform, Transform bow)
     {
@@ -33,6 +32,8 @@ public class Arrow : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
+
+        Instantiate(_hitAudioSource, transform.position, Quaternion.identity);
     }
 
 
