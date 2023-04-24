@@ -90,7 +90,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5605515304314622549}
-  m_LocalRotation: {x: 9.3132246e-10, y: 0.7237688, z: 0.0000000017462296, w: 0.6900426}
+  m_LocalRotation: {x: 0, y: 0.72376853, z: 0, w: 0.69004285}
   m_LocalPosition: {x: 0.31300074, y: 0.048000142, z: 1.0809994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -131,7 +131,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5605515304314622549}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.034992695
   m_Height: 0.62
   m_Direction: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tension: 0
   RopeTransform: {fileID: 5605515304315113075}
-  RopeNearLocalPosition: {x: 0, y: 0, z: 0}
+  RopeNearLocalPosition: {x: 0.176, y: 0, z: 0}
   RopeFarLocalPosition: {x: 0.7, y: 0, z: 0}
   RopeReturnAnimation:
     serializedVersion: 2
