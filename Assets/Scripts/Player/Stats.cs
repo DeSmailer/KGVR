@@ -5,9 +5,9 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] private int _maxAmmo;
     private int _ammo;
-    [SerializeField] private float _firingRange;
+    [SerializeField] private float _arrowSpeed;
     [SerializeField] private float _damage;
-    private int _money;
+    [SerializeField] private int _money;
 
     public static Stats Instance;
 
@@ -37,12 +37,12 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public float FiringRange
+    public float ArrowSpeed
     {
-        get { return _firingRange; }
+        get { return _arrowSpeed; }
         set
         {
-            _firingRange = value;
+            _arrowSpeed = value;
             OnFiringRangeChange?.Invoke();
         }
     }
@@ -56,7 +56,7 @@ public class Stats : MonoBehaviour
             OnDamageChange?.Invoke();
         }
     }
-    
+
     public int Money
     {
         get { return _money; }

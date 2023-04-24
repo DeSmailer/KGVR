@@ -12,7 +12,6 @@ public class Bow : MonoBehaviour
     public AnimationCurve RopeReturnAnimation;
     public float ReturnTime;
     public Arrow CurrentArrow = null;
-    public float ArrowSpeed;
     public AudioSource ArrowAudio;
     public AudioSource BowAudio;
 
@@ -48,7 +47,7 @@ public class Bow : MonoBehaviour
             _pressed = false;
 
             StartCoroutine(RopeReturn());
-            CurrentArrow.Shot(ArrowSpeed * Tension);
+            CurrentArrow.Shot(Stats.Instance.ArrowSpeed * Tension);
             Tension = 0;
 
             BowAudio.Stop();

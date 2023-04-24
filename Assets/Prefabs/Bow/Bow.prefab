@@ -74,7 +74,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5605515304315113077}
   - component: {fileID: 5605515304305238421}
-  - component: {fileID: 5605515304314721528}
   - component: {fileID: 5605515304314721529}
   m_Layer: 6
   m_Name: Bow
@@ -122,20 +121,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!136 &5605515304314721528
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5605515304314622549}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.034992695
-  m_Height: 0.62
-  m_Direction: 1
-  m_Center: {x: -0.040000003, y: 0.01168853, z: 9.663342e-11}
 --- !u!114 &5605515304314721529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c796462a2654e70448965c5b87e8ffcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tension: 0
+  Tension: 46.4
   RopeTransform: {fileID: 5605515304315113075}
   RopeNearLocalPosition: {x: 0.176, y: 0, z: 0}
   RopeFarLocalPosition: {x: 0.7, y: 0, z: 0}

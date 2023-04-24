@@ -1,16 +1,16 @@
 using TMPro;
 using UnityEngine;
 
-public class DamageInformant : MonoBehaviour, IInformant
+public class ArrowSpeedInformant : MonoBehaviour, IInformant
 {
-    [SerializeField] private DamageUpdate _damageUpdate;
+    [SerializeField] private ArrowSpeedUpdate _arrowSpeedUpdate;
 
     [SerializeField] private GameObject _infoPanel;
     [SerializeField] private TMP_Text _infoText;
 
     private void Awake()
     {
-        _damageUpdate.OnCostChange += Display;
+        _arrowSpeedUpdate.OnCostChange += Display;
     }
 
     private void Start()
@@ -31,11 +31,11 @@ public class DamageInformant : MonoBehaviour, IInformant
 
     public void Display()
     {
-        _infoText.text = $"Press \"E\" to increase damage by {_damageUpdate.extraDamage}, cost {_damageUpdate.cost}";
+        _infoText.text = $"Press \"E\" to increase arrow speed by {_arrowSpeedUpdate.extraSpeed}, cost {_arrowSpeedUpdate.cost}";
     }
 
     private void OnDestroy()
     {
-        _damageUpdate.OnCostChange -= Display;
+        _arrowSpeedUpdate.OnCostChange -= Display;
     }
 }

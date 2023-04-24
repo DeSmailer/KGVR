@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAmmo: 14
-  _firingRange: 20
+  _arrowSpeed: 20
   _damage: 2
+  _money: 0
 --- !u!114 &2065000828592405682
 MonoBehaviour:
   m_ObjectHideFlags: 0

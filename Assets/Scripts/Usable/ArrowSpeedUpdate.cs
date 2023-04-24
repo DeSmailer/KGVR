@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-public class DamageUpdate : MonoBehaviour, IUsable
+public class ArrowSpeedUpdate : MonoBehaviour, IUsable
 {
     public int cost = 4;
-    public int extraDamage = 1;
+    public int extraSpeed = 2;
 
     public Action OnCostChange;
 
@@ -12,7 +12,7 @@ public class DamageUpdate : MonoBehaviour, IUsable
     {
         if (Stats.Instance.Money >= cost)
         {
-            Stats.Instance.Damage += extraDamage;
+            Stats.Instance.ArrowSpeed += extraSpeed;
             Stats.Instance.Money -= cost;
 
             cost++;

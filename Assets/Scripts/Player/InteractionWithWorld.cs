@@ -3,7 +3,6 @@ using UnityEngine;
 public class InteractionWithWorld : MonoBehaviour
 {
     [SerializeField] private IUsable usable = null;
-    [SerializeField] private IInformant informant = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,9 +10,10 @@ public class InteractionWithWorld : MonoBehaviour
         {
             usable = other.gameObject.GetComponent<IUsable>();
         }
-        if (other.gameObject.GetComponent<IInformant>() != null)
+
+        IInformant informant = other.gameObject.GetComponent<IInformant>();
+        if (informant != null)
         {
-            informant = other.gameObject.GetComponent<IInformant>();
             informant.ShowInfo();
         }
     }
@@ -28,13 +28,10 @@ public class InteractionWithWorld : MonoBehaviour
             }
         }
 
+        IInformant informant = other.gameObject.GetComponent<IInformant>();
         if (informant != null)
         {
-            if (other.gameObject.GetComponent<IInformant>() == informant)
-            {
-                informant.HideInfo();
-                informant = null;
-            }
+            informant.HideInfo();
         }
     }
 
@@ -46,7 +43,6 @@ public class InteractionWithWorld : MonoBehaviour
             {
                 usable.Use();
             }
-
         }
     }
 }
