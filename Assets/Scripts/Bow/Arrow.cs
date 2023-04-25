@@ -39,10 +39,10 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        EnemieHP enemieHP = other.gameObject.GetComponent<EnemieHP>();
-        if (enemieHP != null)
+        EnemyHP enemyHP = other.gameObject.GetComponent<EnemyHP>();
+        if (enemyHP != null)
         {
-            enemieHP.TakeDamage(Stats.Instance.Damage);
+            enemyHP.TakeDamage(Stats.Instance.Damage);
         }
 
         if (other.gameObject.tag != "Player")

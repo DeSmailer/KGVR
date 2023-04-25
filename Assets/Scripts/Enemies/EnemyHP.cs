@@ -1,12 +1,21 @@
+using System;
 using UnityEngine;
 
-public class EnemieHP : MonoBehaviour
+public class EnemyHP : MonoBehaviour
 {
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
 
-    private void Start()
+    public Action<EnemyHP> OnDie;
+
+    public void Initialize()
     {
+        _hp = _maxHP;
+    }
+
+    public void Initialize(float maxHP)
+    {
+        _maxHP = maxHP;
         _hp = _maxHP;
     }
 
@@ -22,6 +31,8 @@ public class EnemieHP : MonoBehaviour
 
     public void Die()
     {
+        Stats.Instance.Money += (int)(2+_maxHP / 2);
+        OnDie?.Invoke(this);
         Debug.Log($"¿Ã¿ ƒ¿… {gameObject.name}");
     }
 }
