@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private bool _isGrounded;
 
+    [SerializeField] private float _jumpHight = 2f;
+
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -33,6 +35,14 @@ public class PlayerMovement : MonoBehaviour
         if (_isGrounded && _velocity.y < 0)
         {
             _velocity.y = -2;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_isGrounded)
+            {
+                _velocity.y = Mathf.Sqrt(_jumpHight * -2 * _gravity);
+            }
         }
     }
 }
