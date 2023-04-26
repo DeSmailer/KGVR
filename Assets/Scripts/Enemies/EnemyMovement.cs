@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemieMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     private Zone _movementZone;
     private Vector3 target;

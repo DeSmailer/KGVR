@@ -61,10 +61,10 @@ public class WaveController : MonoBehaviour
     private EnemyHP SpawnEnemy()
     {
         EnemyHP enemyHP = Instantiate(_enemyHPPrefab, _spawnZone.GetRandomPoint(), Quaternion.identity);
-        EnemieMovement enemieMovement = enemyHP.GetComponent<EnemieMovement>();
+        EnemyMovement enemyMovement = enemyHP.GetComponent<EnemyMovement>();
 
         enemyHP.Initialize(1);
-        enemieMovement.Initialize(_movementZone);
+        enemyMovement.Initialize(_movementZone);
 
         return enemyHP;
     }

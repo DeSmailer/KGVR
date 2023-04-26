@@ -13,7 +13,7 @@ public class Stats : MonoBehaviour
 
     public Action OnMaxAmmoChange;
     public Action OnAmmoChange;
-    public Action OnFiringRangeChange;
+    public Action OnArrowSpeedChange;
     public Action OnDamageChange;
     public Action OnMoneyChange;
 
@@ -43,7 +43,7 @@ public class Stats : MonoBehaviour
         set
         {
             _arrowSpeed = value;
-            OnFiringRangeChange?.Invoke();
+            OnArrowSpeedChange?.Invoke();
         }
     }
 

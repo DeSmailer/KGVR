@@ -8,6 +8,8 @@ public class EnemyHP : MonoBehaviour
 
     public Action<EnemyHP> OnDie;
 
+    private bool _isAlive = true;
+
     public void Initialize()
     {
         _hp = _maxHP;
@@ -21,18 +23,25 @@ public class EnemyHP : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _hp -= damage;
-
-        if (_hp <= 0)
+        if (_isAlive)
         {
-            Die();
+            _hp -= damage;
+
+            if (_hp <= 0)
+            {
+                Die();
+            }
         }
     }
 
     public void Die()
     {
-        Stats.Instance.Money += (int)(2+_maxHP / 2);
-        OnDie?.Invoke(this);
+        _isAlive = false;
+
+        Stats.Instance.Money += (int)(2 + _maxHP / 2);
+
         Debug.Log($"ÀÌÀ ÄÀÉ {gameObject.name}");
+
+        OnDie?.Invoke(this);
     }
 }
