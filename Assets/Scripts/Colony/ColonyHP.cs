@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ColonyHP : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float maxHP;
+    public float hp;
+
+    public Action OnDie;
+    public Action OnDamageTaken;
+
+    private void Awake()
     {
-        
+        Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize()
     {
-        
+        hp = maxHP;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        hp -= damage;
+        OnDamageTaken?.Invoke();
+
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        OnDie?.Invoke();
+        Debug.Log($"Lose");
+
+        Invoke("ReloadScene", 5);
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
