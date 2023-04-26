@@ -7,6 +7,8 @@ public class ColonyHP : MonoBehaviour
     public float maxHP;
     public float hp;
 
+    [SerializeField] private Transform[] _targets;
+
     public Action OnDie;
     public Action OnDamageTaken;
 
@@ -42,5 +44,10 @@ public class ColonyHP : MonoBehaviour
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public Transform GetTarget()
+    {
+        return _targets[UnityEngine.Random.Range(0, _targets.Length)];
     }
 }
