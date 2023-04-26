@@ -133,8 +133,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7947395801673345570}
   trailRenderer: {fileID: 7947395800576796441}
-  _hitAudioSource: {fileID: 3882518013539772361, guid: f86fc764dc450b242baa107d8b794a26,
+  _targetAudioSource: {fileID: 3882518013539772361, guid: 5560bc129074f10428bfd80a1aa542fd,
     type: 3}
+  _waterAudioSource: {fileID: 3882518013539772361, guid: cee6ed3622e252246b0802d01eeaa3f7,
+    type: 3}
+  _groundAudioSource: {fileID: 3882518013539772361, guid: f86fc764dc450b242baa107d8b794a26,
+    type: 3}
+  _waterLayerMask:
+    serializedVersion: 2
+    m_Bits: 131088
+  _groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 69632
 --- !u!114 &7947395801673345582
 MonoBehaviour:
   m_ObjectHideFlags: 0

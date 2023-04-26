@@ -5,7 +5,12 @@ public class Arrow : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private TrailRenderer trailRenderer;
 
-    [SerializeField] private AudioSource _hitAudioSource;
+    [SerializeField] private AudioSource _targetAudioSource;
+    [SerializeField] private AudioSource _waterAudioSource;
+    [SerializeField] private AudioSource _groundAudioSource;
+
+    [SerializeField] private LayerMask _waterLayerMask;
+    [SerializeField] private LayerMask _groundLayerMask;
 
     public void SetToRope(Transform ropeTransform, Transform bow)
     {
@@ -28,12 +33,25 @@ public class Arrow : MonoBehaviour
 
     }
 
-    private void GetStuck()
+    private void GetStuck(StuckSounds stuckSounds)
     {
-        rb.velocity = Vector3.zero;
-        rb.isKinematic = true;
-
-        Instantiate(_hitAudioSource, transform.position, Quaternion.identity);
+        if (stuckSounds == StuckSounds.Target)
+        {
+            Instantiate(_targetAudioSource, transform.position, Quaternion.identity);
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+        if (stuckSounds == StuckSounds.Water)
+        {
+            Instantiate(_waterAudioSource, transform.position, Quaternion.identity);
+            Destroy(gameObject, 0.1f);
+        }
+        if (stuckSounds == StuckSounds.Ground)
+        {
+            Instantiate(_groundAudioSource, transform.position, Quaternion.identity);
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
     }
 
 
@@ -47,12 +65,26 @@ public class Arrow : MonoBehaviour
 
         if (other.gameObject.tag != "Player")
         {
-            GetStuck();
-        }
-
-        if (other.transform.tag == "shootable")
-        {
-            GetStuck();
+            Debug.Log(other.gameObject.layer);
+            if (other.gameObject.layer == _groundLayerMask)
+            {
+                GetStuck(StuckSounds.Ground);
+            }
+            else if (other.gameObject.layer == _waterLayerMask)
+            {
+                GetStuck(StuckSounds.Water);
+            }
+            else
+            {
+                GetStuck(StuckSounds.Target);
+            }
         }
     }
+}
+
+public enum StuckSounds
+{
+    Target,
+    Water,
+    Ground
 }

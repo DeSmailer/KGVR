@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592926343}
   - component: {fileID: 1592926344}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 6768953765940911545}
   - component: {fileID: 2783994334847455936}
   - component: {fileID: 2065000828592405682}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 6768953766553178703}
   - component: {fileID: 6768953766553178700}
   - component: {fileID: 6768953766553178698}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6768953766774578600}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,10 +460,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6768953766553178697}
     m_Modifications:
+    - target: {fileID: 5605515304314622545, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304314622547, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5605515304314622549, guid: d53f81fefd5637340848e5f65ebfd953,
         type: 3}
       propertyPath: m_Name
       value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304314622549, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304314622551, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5605515304315113077, guid: d53f81fefd5637340848e5f65ebfd953,
         type: 3}
@@ -519,6 +539,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304468748584, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605515304488222600, guid: d53f81fefd5637340848e5f65ebfd953,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d53f81fefd5637340848e5f65ebfd953, type: 3}
