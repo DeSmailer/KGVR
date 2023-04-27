@@ -9,8 +9,10 @@ public class Arrow : MonoBehaviour
     [SerializeField] private AudioSource _waterAudioSource;
     [SerializeField] private AudioSource _groundAudioSource;
 
-    [SerializeField] private LayerMask _waterLayerMask;
-    [SerializeField] private LayerMask _groundLayerMask;
+    [SerializeField] private int _waterLayerMask;
+    [SerializeField] private int _groundLayerMask;
+
+    [SerializeField] private bool _isCollised = false;
 
     public void SetToRope(Transform ropeTransform, Transform bow)
     {
@@ -44,11 +46,16 @@ public class Arrow : MonoBehaviour
         if (stuckSounds == StuckSounds.Water)
         {
             Instantiate(_waterAudioSource, transform.position, Quaternion.identity);
-            Destroy(gameObject, 0.1f);
+            //rb.velocity = Vector3.zero;
+
+            //Destroy(gameObject, 0.1f);
         }
         if (stuckSounds == StuckSounds.Ground)
         {
-            Instantiate(_groundAudioSource, transform.position, Quaternion.identity);
+            if (!_isCollised)
+            {
+                Instantiate(_groundAudioSource, transform.position, Quaternion.identity);
+            }
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
         }
@@ -65,20 +72,27 @@ public class Arrow : MonoBehaviour
 
         if (other.gameObject.tag != "Player")
         {
-            Debug.Log(other.gameObject.layer);
             if (other.gameObject.layer == _groundLayerMask)
             {
                 GetStuck(StuckSounds.Ground);
-            }
-            else if (other.gameObject.layer == _waterLayerMask)
-            {
-                GetStuck(StuckSounds.Water);
             }
             else
             {
                 GetStuck(StuckSounds.Target);
             }
+
+            _isCollised = true;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == _waterLayerMask)
+        {
+            GetStuck(StuckSounds.Water);
+            _isCollised = true;
+        }
+
     }
 }
 

@@ -139,12 +139,8 @@ MonoBehaviour:
     type: 3}
   _groundAudioSource: {fileID: 3882518013539772361, guid: f86fc764dc450b242baa107d8b794a26,
     type: 3}
-  _waterLayerMask:
-    serializedVersion: 2
-    m_Bits: 131088
-  _groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 69632
+  _waterLayerMask: 4
+  _groundLayerMask: 12
 --- !u!114 &7947395801673345582
 MonoBehaviour:
   m_ObjectHideFlags: 0
