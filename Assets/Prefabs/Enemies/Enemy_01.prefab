@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300006}
   - component: {fileID: 2300000}
   - component: {fileID: 6400000}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: build_boat_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 559342797945171203}
   - component: {fileID: 1332268320625880684}
   - component: {fileID: 4855998923023597648}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Enemy_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6c2189694452247bd7c520ff578963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
+  _turningSpeed: 0
 --- !u!136 &4855998923023597648
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -186,7 +188,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 3300002}
   - component: {fileID: 2300004}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: build_boat_dragonhead_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +271,7 @@ GameObject:
   - component: {fileID: 400008}
   - component: {fileID: 3300004}
   - component: {fileID: 2300002}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: build_boat_dragonhead_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

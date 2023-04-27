@@ -13,7 +13,6 @@ public class WaveController : MonoBehaviour
     [SerializeField] private Zone _spawnZone;
     [SerializeField] private Zone _movementZone;
 
-
     public List<EnemyHP> enemies = new List<EnemyHP>();
 
     public int WaveNumber
@@ -29,6 +28,7 @@ public class WaveController : MonoBehaviour
         }
     }
     public Action OnWaveNumberChange;
+    public Action<float> OnNewWaveThrough;
 
     private void Start()
     {
@@ -55,6 +55,7 @@ public class WaveController : MonoBehaviour
         if (enemies.Count <= 0)
         {
             Invoke("StartNewWave", _delay);
+            OnNewWaveThrough?.Invoke(_delay);
         }
     }
 

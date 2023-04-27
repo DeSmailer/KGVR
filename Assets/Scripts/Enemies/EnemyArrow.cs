@@ -5,20 +5,23 @@ public class EnemyArrow : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private TrailRenderer trailRenderer;
 
-    [SerializeField] private AudioSource _hitAudioSource;
+    [SerializeField] private AudioSource _targetAudioSource;
+    [SerializeField] private AudioSource _waterAudioSource;
+    [SerializeField] private AudioSource _groundAudioSource;
 
-    public void SetToRope(Transform ropeTransform, Transform bow)
+    [SerializeField] private float _damage = 1;
+
+    [SerializeField] private int _waterLayerMask;
+    [SerializeField] private int _groundLayerMask;
+
+    [SerializeField] private bool _isCollised = false;
+
+    public void Shot(Transform ropeTransform, float velocity)
     {
         transform.parent = ropeTransform;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
 
-        rb.isKinematic = true;
-        trailRenderer.enabled = false;
-    }
-
-    public void Shot(float velocity)
-    {
         transform.parent = null;
         rb.isKinematic = false;
         rb.velocity = transform.forward * velocity;
@@ -27,25 +30,56 @@ public class EnemyArrow : MonoBehaviour
         Destroy(gameObject, 15f);
     }
 
-    private void GetStuck()
+    private void GetStuck(StuckSounds stuckSounds)
     {
-        rb.velocity = Vector3.zero;
-        rb.isKinematic = true;
-
-        Instantiate(_hitAudioSource, transform.position, Quaternion.identity);
+        if (stuckSounds == StuckSounds.Target)
+        {
+            Instantiate(_targetAudioSource, transform.position, Quaternion.identity);
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+        if (stuckSounds == StuckSounds.Water)
+        {
+            Instantiate(_waterAudioSource, transform.position, Quaternion.identity);
+        }
+        if (stuckSounds == StuckSounds.Ground)
+        {
+            if (!_isCollised)
+            {
+                Instantiate(_groundAudioSource, transform.position, Quaternion.identity);
+            }
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
     }
 
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.layer == _groundLayerMask)
         {
-            GetStuck();
+            GetStuck(StuckSounds.Ground);
+        }
+        else
+        {
+            GetStuck(StuckSounds.Target);
         }
 
-        if (other.transform.tag == "shootable")
+        _isCollised = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == _waterLayerMask)
         {
-            GetStuck();
+            GetStuck(StuckSounds.Water);
+            _isCollised = true;
+        }
+
+        ColonyHP colonyHP = other.gameObject.GetComponent<ColonyHP>();
+        if (colonyHP != null)
+        {
+            colonyHP.TakeDamage(_damage);
         }
     }
 }

@@ -4,6 +4,7 @@ public class Guides : MonoBehaviour
 {
     private Transform _target;
     [SerializeField] private float _arrowSpeed;
+    public GameObject ar;
 
     private void Start()
     {
@@ -16,18 +17,10 @@ public class Guides : MonoBehaviour
         transform.LookAt(_target);
     }
 
-    private AudioSource ArrowAudio;
-
-    public GameObject ar;
-
     public void Shot()
     {
         EnemyArrow CurrentArrow = Instantiate(ar).GetComponent<EnemyArrow>();
 
-        CurrentArrow.SetToRope(transform, transform);
-        CurrentArrow.Shot(_arrowSpeed);
-
-        ArrowAudio.pitch = Random.Range(0.8f, 1.2f);
-        ArrowAudio.Play();
+        CurrentArrow.Shot(transform, _arrowSpeed);
     }
 }
