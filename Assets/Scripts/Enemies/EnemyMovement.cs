@@ -8,9 +8,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _turningSpeed;
 
+    [SerializeField] private EnemyHP _enemyHP;
+
     public void Initialize(Zone movementZone)
     {
         _movementZone = movementZone;
+        _enemyHP = GetComponent<EnemyHP>();
+
+        _enemyHP.OnDie += OnDie;
+
         SelectNewMovementPoint();
     }
 
@@ -48,5 +54,12 @@ public class EnemyMovement : MonoBehaviour
         Debug.DrawRay(transform.position, newDir, Color.red);
 
         transform.rotation = Quaternion.LookRotation(newDir);
+    }
+
+    private void OnDie(EnemyHP enemyHP)
+    {
+        _speed = 0;
+        _turningSpeed = 0;
+        _enemyHP.OnDie -= OnDie;
     }
 }

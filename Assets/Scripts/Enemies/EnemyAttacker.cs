@@ -28,25 +28,40 @@ public class EnemyAttacker : MonoBehaviour
     [SerializeField] private float _minDelay = 1;
     [SerializeField] private float _maxDelay = 3;
 
-    [SerializeField] [Range(0, 100)] private float _random = 50;
+    [SerializeField] [Range(0, 100)] private float _chanceToShoot = 50;
+
+    [SerializeField] private EnemyHP _enemyHP;
+    [SerializeField] private bool _isDead = false;
 
     private float Delay => Random.Range(_minDelay, _maxDelay);
 
     private void Start()
     {
+        _enemyHP = GetComponent<EnemyHP>();
+        _enemyHP.OnDie += OnDie;
+
         Invoke("Shoot", Delay);
     }
 
     private void Shoot()
     {
+        if (_isDead)
+            return;
+
         foreach (Guides guide in _guides)
         {
             float random = Random.Range(0, 100);
-            if (random <= _random)
+            if (random <= _chanceToShoot)
             {
                 guide.Shot();
             }
         }
         Invoke("Shoot", Delay);
+    }
+
+    private void OnDie(EnemyHP enemyHP)
+    {
+        _isDead = true;
+        _enemyHP.OnDie -= OnDie;
     }
 }
