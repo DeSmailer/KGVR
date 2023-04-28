@@ -674,9 +674,9 @@ MonoBehaviour:
   _rotationMinZ: -40
   _rotationMaxX: 40
   _rotationMaxZ: 40
-  _smooth: 1
+  _smooth: 3.38
+  _t: 0.32
   _rotationX: 0
-  _rotationY: 0
   _rotationZ: 0
 --- !u!65 &4442348726842616654
 BoxCollider:
