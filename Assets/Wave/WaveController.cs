@@ -27,12 +27,14 @@ public class WaveController : MonoBehaviour
             OnWaveNumberChange?.Invoke();
         }
     }
+
     public Action OnWaveNumberChange;
-    public Action<float> OnNewWaveThrough;
+    public Action<int, float> OnNewWaveThrough;
 
     private void Start()
     {
         Invoke("StartNewWave", _firstDelay);
+        OnNewWaveThrough?.Invoke(_waveNumber + 1, _firstDelay);
     }
 
     public void StartNewWave()
@@ -55,7 +57,7 @@ public class WaveController : MonoBehaviour
         if (enemies.Count <= 0)
         {
             Invoke("StartNewWave", _delay);
-            OnNewWaveThrough?.Invoke(_delay);
+            OnNewWaveThrough?.Invoke(_waveNumber + 1, _delay);
         }
     }
 
