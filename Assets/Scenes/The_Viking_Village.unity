@@ -9952,43 +9952,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 337476857}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &342562737
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &346780483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26714,6 +26677,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 811674296}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &812095389 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6768953766553178697, guid: 32ce769b975d93c428628edc394ea662,
+    type: 3}
+  m_PrefabInstance: {fileID: 6768953765349086292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &815153024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32085,6 +32054,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 991702446}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &993155762
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &994188637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50093,6 +50099,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1582617150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1583030582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6768953765940911538, guid: 32ce769b975d93c428628edc394ea662,
+    type: 3}
+  m_PrefabInstance: {fileID: 6768953765349086292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1583030590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583030582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91ad5533fbfa054e81580e52328bd2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rayStart: {fileID: 812095389}
+  _distance: 4
+  _mask:
+    serializedVersion: 2
+    m_Bits: 5121
 --- !u!4 &1584466664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1650942096471433627, guid: d1815a87ce08fec4a946a23dda29aadb,
@@ -67126,7 +67155,7 @@ PrefabInstance:
     - target: {fileID: 2398478859520762637, guid: 878aa6f8306c83743b402521ccc10e86,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4961521577792976687, guid: 878aa6f8306c83743b402521ccc10e86,
         type: 3}
