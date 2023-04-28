@@ -10,10 +10,10 @@ public class EnemyHP : MonoBehaviour
 
     private bool _isAlive = true;
 
-    private void Start()
-    {
-        Invoke("Die", UnityEngine.Random.Range(0.1f, 1f));
-    }
+    //private void Start()
+    //{
+    //    Invoke("Die", UnityEngine.Random.Range(0.1f, 1f));
+    //}
 
     public void Initialize()
     {
