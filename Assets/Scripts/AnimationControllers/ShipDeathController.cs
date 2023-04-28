@@ -15,7 +15,9 @@ public class ShipDeathController : MonoBehaviour
     [SerializeField] [Range(0, 40)] private float _rotationMaxZ = 40;
 
     [SerializeField] [Range(0, 10)] private float _smooth;
-    [SerializeField] [Range(0, 1)] private float _time = 0.4f;
+    [SerializeField] [Range(0, 1)] private float _tiltsTime = 0.4f;
+    [SerializeField] [Range(0, 3)] private float _drowningTime = 1;
+    [SerializeField] private float _drowningSpeed = 1;
 
     private float rotationX => Random.Range(_rotationMinX, _rotationMaxX);
     //private float rotationY => Random.Range(_rotationMinY, _rotationMaxY);
@@ -31,7 +33,7 @@ public class ShipDeathController : MonoBehaviour
         _enemyHP.OnDie += OnDie;
     }
 
-    private IEnumerator Die()
+    private IEnumerator TiltsToSide()
     {
         _rotationX = rotationX;
         _rotationZ = rotationZ;
@@ -39,11 +41,25 @@ public class ShipDeathController : MonoBehaviour
         Vector3 rotation = new Vector3(_rotationX, 0, _rotationZ) * _smooth * Time.deltaTime;
         Debug.Log(rotation);
 
-        while (_time > 0)
+        while (_tiltsTime > 0)
         {
-            _time -= Time.deltaTime;
+            _tiltsTime -= Time.deltaTime;
 
             transform.Rotate(rotation);
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator Drown()
+    {
+        Vector3 step = new Vector3(0, _drowningSpeed, 0);
+
+        while (_drowningTime > 0)
+        {
+            _drowningTime -= Time.deltaTime;
+
+            transform.position -= step * Time.deltaTime;
 
             yield return null;
         }
@@ -54,7 +70,8 @@ public class ShipDeathController : MonoBehaviour
         _rotationX = rotationX;
         _rotationZ = rotationZ;
 
-        StartCoroutine(Die());
+        StartCoroutine(TiltsToSide());
+        StartCoroutine(Drown());
         _enemyHP.OnDie -= OnDie;
     }
 }
