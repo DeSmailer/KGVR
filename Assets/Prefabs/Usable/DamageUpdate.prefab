@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1447961488904907388}
   - component: {fileID: 4569439660718998344}
   - component: {fileID: 214768340889916418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 9001367284938244522}
   - component: {fileID: 3735529217906789067}
   - component: {fileID: 2968930112513680806}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DamageUpdate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 4
+  extraDamage: 1
 --- !u!114 &2968930112513680806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,15 +280,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.022163756
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9997544
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalRotation.z
@@ -299,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -182.54
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 4714062230323256, guid: 6c432cfc50bde7342a8add7db346b9e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

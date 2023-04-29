@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3247996761086520123}
   - component: {fileID: 4662935172939723640}
   - component: {fileID: 1514996613347184460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 296522429941264922}
   - component: {fileID: 1311705597412145268}
   - component: {fileID: 4331263744608466614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ArrowSpeedUpdate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

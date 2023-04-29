@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1375737066}
   - component: {fileID: 1375737070}
   - component: {fileID: 1375737069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MaxAmmoUpdate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7178140089739745653}
   - component: {fileID: 8260663683135390143}
   - component: {fileID: 6256410821070234080}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
