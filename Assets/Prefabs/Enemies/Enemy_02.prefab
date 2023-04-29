@@ -674,10 +674,10 @@ MonoBehaviour:
   _rotationMinZ: -40
   _rotationMaxX: 40
   _rotationMaxZ: 40
-  _smooth: 3.38
-  _tiltsTime: 0.4
-  _drowningTime: 3
-  _drowningSpeed: 3
+  _smooth: 1.2
+  _tiltsTime: 1.19
+  _drowningTime: 8.5
+  _drowningSpeed: 4.2
   _rotationX: 0
   _rotationZ: 0
 --- !u!65 &4442348726842616654

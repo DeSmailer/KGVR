@@ -7,24 +7,20 @@ public class ShipDeathController : MonoBehaviour
     [SerializeField] private EnemyHP _enemyHP;
 
     [SerializeField] [Range(-40, 0)] private float _rotationMinX = -40;
-    //[SerializeField] [Range(-40, 0)] private float _rotationMinY = -40;
     [SerializeField] [Range(-40, 0)] private float _rotationMinZ = -40;
 
     [SerializeField] [Range(0, 40)] private float _rotationMaxX = 40;
-    //[SerializeField] [Range(0, 40)] private float _rotationMaxY = 40;
     [SerializeField] [Range(0, 40)] private float _rotationMaxZ = 40;
 
-    [SerializeField] [Range(0, 10)] private float _smooth;
-    [SerializeField] [Range(0, 1)] private float _tiltsTime = 0.4f;
-    [SerializeField] [Range(0, 3)] private float _drowningTime = 1;
+    [SerializeField] [Range(0, 20)] private float _smooth;
+    [SerializeField] [Range(0, 2)] private float _tiltsTime = 0.4f;
+    [SerializeField] [Range(0, 10)] private float _drowningTime = 1;
     [SerializeField] private float _drowningSpeed = 1;
 
     private float rotationX => Random.Range(_rotationMinX, _rotationMaxX);
-    //private float rotationY => Random.Range(_rotationMinY, _rotationMaxY);
     private float rotationZ => Random.Range(_rotationMinZ, _rotationMaxZ);
 
     [SerializeField] private float _rotationX;
-    //[SerializeField] private float _rotationY;
     [SerializeField] private float _rotationZ;
 
     private void Start()
