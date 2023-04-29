@@ -19,8 +19,12 @@ public class Guides : MonoBehaviour
 
     public void Shot()
     {
-        EnemyArrow CurrentArrow = Instantiate(ar).GetComponent<EnemyArrow>();
+        if (Vector3.Distance(transform.position, _target.position) <= 160f)
+        {
+            EnemyArrow CurrentArrow = Instantiate(ar).GetComponent<EnemyArrow>();
 
-        CurrentArrow.Shot(transform, _arrowSpeed);
+            CurrentArrow.Shot(transform, _arrowSpeed);
+        }
+
     }
 }
